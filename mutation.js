@@ -7,8 +7,28 @@
 
 // Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
 function mutation(arr) {
-    arr1 = [];
-    arr2 = [];
+  let no2 = arr[1].toString().toLowerCase();
+  let no3 = arr[0].toString().toLowerCase();
+  arr.pop(); arr.pop();
+  arr.push(no3); arr.push(no2);
+     arr1 = [];
+     arr2 = [];
+     arr3 = [];
+     arr1 = arr[0].split("");
+     arr2.push(arr[1]);
+     let newarr = arr[1].split("");
+     for(let x = 0; x < newarr.length; x++){
+       if(arr1.includes(newarr[x]) == true){
+         arr3.push(1);
+     }
+      else{
+       arr3.push(0);
+      }
+     }
+     if(arr3.includes(0) == true){
+       return false
+     }
+     else return true;
   }
   
-  console.log(mutation(["hello", "hey"]));
+  console.log(mutation(["Mary", "Army"]));
